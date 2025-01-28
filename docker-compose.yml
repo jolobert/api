@@ -2,6 +2,7 @@ services:
   # main db
   mysql:
     image: mysql:5.7
+    platform: linux/amd64
     volumes:
       - ${ZEEGUU_DATA_FOLDER}/mysql:/var/lib/mysql
     environment:
@@ -16,6 +17,7 @@ services:
   # main db
   fmd_mysql:
     image: mysql:5.7
+    platform: linux/amd64
     volumes:
       - ${ZEEGUU_DATA_FOLDER}/fmd_mysql:/var/lib/mysql
     environment:
@@ -29,6 +31,7 @@ services:
 
   elasticsearch:
     image: elasticsearch:7.6.2
+    platform: linux/amd64
     environment:
       - discovery.type=single-node
       - network.host=0.0.0.0 # is this still needed?
